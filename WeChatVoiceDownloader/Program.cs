@@ -18,7 +18,7 @@ namespace WeChatVoiceDownloader
         {
             if (args.Length == 0)
             {
-                Console.WriteLine("至少需要一个参数,用法:WeChatVoiceDownloader.exe \"网页链接\" [文件名]");
+                Console.WriteLine("至少需要一个参数,用法:WeChatVoiceDownloader.exe \"网页链接\"");
                 ShowQuitMessage();
                 return;
             }
