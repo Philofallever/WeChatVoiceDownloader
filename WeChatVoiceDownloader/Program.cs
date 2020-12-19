@@ -47,9 +47,11 @@ namespace WeChatVoiceDownloader
             {
                 webClient.Encoding = Encoding.UTF8;
                 var content = webClient.DownloadString(args[0]);
-                var match   = Regex.Match(content, @"  d.title = ""(.+)"";");
+                //var match   = Regex.Match(content, @"  d.title = ""(.+)"";");
+                var match = Regex.Match(content, @"window.title = '(.+)'");
+
                 if (match.Success)
-                    fileName = match.Groups[1].Value;
+                    fileName = match.Groups[1].Value.Replace("&nbsp;"," ");
             }
 
             var reslink = $"{_resLink}{dict[_voiceKey]}";
